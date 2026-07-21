@@ -71,11 +71,11 @@ export const experience = [
   },
   {
     org: 'Uganda Civil Aviation Authority',
-    role: 'Software Development Intern',
-    period: 'June 2025 — July 2026',
+    role: 'IT Support Intern',
+    period: 'June 2025 — July 2025',
     tag: 'Internship',
     description:
-      'Applying software engineering practices in an enterprise setting, building on the same fundamentals sharpened through open-source work.',
+      'Provided IT support and troubleshooting for internal systems, including network issues, software installations, and hardware maintenance. Assisted in the implementation of new IT policies and procedures.',
     highlights: [],
   },
 ];

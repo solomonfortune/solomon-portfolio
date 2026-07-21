@@ -1,10 +1,9 @@
 import { motion } from 'framer-motion';
 import './Portrait.css';
+import portraitImg from '../assets/portrait.png';
 
 /**
- * Professional portrait placeholder. Swap this out for a real photo by
- * replacing the contents of the `.portrait-frame` with an <img> tag —
- * see the README for instructions.
+ * Professional portrait — real photo, swapped in for the initial placeholder.
  */
 export default function Portrait() {
   return (
@@ -16,18 +15,7 @@ export default function Portrait() {
     >
       <div className="portrait-ring" aria-hidden="true" />
       <div className="portrait-frame">
-        <svg viewBox="0 0 200 200" role="img" aria-label="Portrait placeholder for Solomon Buwule">
-          <defs>
-            <linearGradient id="portraitGrad" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stopColor="var(--accent)" />
-              <stop offset="100%" stopColor="var(--accent-2)" />
-            </linearGradient>
-          </defs>
-          <rect width="200" height="200" fill="url(#portraitGrad)" opacity="0.14" />
-          <text x="100" y="120" textAnchor="middle" fontFamily="'Space Grotesk', sans-serif" fontSize="64" fontWeight="600" fill="var(--accent)">
-            SB
-          </text>
-        </svg>
+        <img src={portraitImg} alt="Solomon Buwule" />
       </div>
       <span className="portrait-badge">
         <span className="pill-dot" /> Available for opportunities

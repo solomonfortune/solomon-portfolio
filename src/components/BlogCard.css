@@ -1,0 +1,39 @@
+.blog-card { height: 100%; }
+
+.blog-card-link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 26px 26px 22px;
+}
+
+.blog-date {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-tertiary);
+  margin-bottom: 12px;
+}
+
+.blog-title {
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  line-height: 1.35;
+  margin-bottom: 10px;
+}
+
+.blog-desc {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 18px;
+  flex-grow: 1;
+}
+
+.blog-read {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 500;
+}

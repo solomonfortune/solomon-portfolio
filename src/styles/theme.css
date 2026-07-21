@@ -1,0 +1,73 @@
+/* ==========================================================================
+   Design tokens — dark is the default identity, light is the alternate read
+   ========================================================================== */
+
+:root {
+  /* type */
+  --font-display: 'Space Grotesk', 'Inter', sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SFMono-Regular', monospace;
+
+  /* motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 0.2s;
+  --dur-med: 0.5s;
+  --dur-slow: 0.9s;
+
+  /* layout */
+  --container-w: 1120px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+
+  /* accents (shared across themes) */
+  --accent-blue: #3B82F6;
+  --accent-purple: #8B5CF6;
+  --accent-green: #10B981;
+}
+
+[data-theme='dark'] {
+  --bg: #050816;
+  --bg-secondary: #0B1120;
+  --bg-elevated: #0E1526;
+  --card-bg: rgba(148, 163, 184, 0.045);
+  --card-border: rgba(148, 163, 184, 0.14);
+  --card-border-hover: rgba(59, 130, 246, 0.45);
+
+  --text: #F8FAFC;
+  --text-secondary: #94A3B8;
+  --text-tertiary: #5B6B84;
+
+  --accent: var(--accent-blue);
+  --accent-2: var(--accent-purple);
+  --accent-data: var(--accent-green);
+
+  --nav-bg: rgba(5, 8, 22, 0.6);
+  --nav-border: rgba(148, 163, 184, 0.12);
+
+  --shadow-color: 217 91% 4%;
+  --glow: 0 0 0 1px rgba(59, 130, 246, 0.08), 0 12px 40px -12px rgba(59, 130, 246, 0.35);
+}
+
+[data-theme='light'] {
+  --bg: #FFFFFF;
+  --bg-secondary: #F8FAFC;
+  --bg-elevated: #FFFFFF;
+  --card-bg: rgba(15, 23, 42, 0.025);
+  --card-border: rgba(15, 23, 42, 0.1);
+  --card-border-hover: rgba(37, 99, 235, 0.4);
+
+  --text: #0F172A;
+  --text-secondary: #475569;
+  --text-tertiary: #94A3B8;
+
+  --accent: #2563EB;
+  --accent-2: #7C3AED;
+  --accent-data: #059669;
+
+  --nav-bg: rgba(255, 255, 255, 0.65);
+  --nav-border: rgba(15, 23, 42, 0.08);
+
+  --shadow-color: 217 91% 60%;
+  --glow: 0 0 0 1px rgba(37, 99, 235, 0.06), 0 12px 40px -16px rgba(37, 99, 235, 0.25);
+}

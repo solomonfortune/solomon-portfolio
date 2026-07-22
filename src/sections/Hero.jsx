@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion';
-import { PenLine, ArrowDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { PenLine, ArrowDown, FileText, FileUser } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from '../components/icons';
 import Portrait from '../components/Portrait';
 import ContributionGrid from '../components/ContributionGrid';
 import { profile } from '../utils/data';
+import { scrollToSection } from '../utils/scrollToSection';
 import './Hero.css';
 
 const container = {
@@ -57,6 +59,15 @@ export default function Hero() {
             </a>
           </motion.div>
 
+          <motion.div className="hero-docs" variants={item}>
+            <Link to="/cv" target="_blank" rel="noreferrer" className="hero-doc-link">
+              <FileText size={15} /> View CV
+            </Link>
+            <Link to="/resume" target="_blank" rel="noreferrer" className="hero-doc-link">
+              <FileUser size={15} /> View Resume
+            </Link>
+          </motion.div>
+
           <motion.div className="hero-meta" variants={item}>
             <span className="eyebrow" style={{ marginBottom: 0 }}>{profile.location}</span>
           </motion.div>
@@ -76,6 +87,7 @@ export default function Hero() {
         href="#about"
         className="hero-scroll-cue"
         aria-label="Scroll to About section"
+        onClick={(e) => scrollToSection(e, 'about')}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, y: [0, 8, 0] }}
         transition={{ opacity: { delay: 1, duration: 0.6 }, y: { duration: 1.8, repeat: Infinity, ease: 'easeInOut' } }}

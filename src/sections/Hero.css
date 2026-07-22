@@ -78,7 +78,34 @@
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
+  margin-bottom: 18px;
+}
+
+.hero-docs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
   margin-bottom: 30px;
+}
+
+.hero-doc-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 16px;
+  border-radius: 100px;
+  border: 1px dashed var(--card-border);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  transition: border-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out);
+}
+
+.hero-doc-link:hover {
+  border-color: var(--accent);
+  border-style: solid;
+  color: var(--accent);
+  transform: translateY(-1px);
 }
 
 .hero-meta .eyebrow {
@@ -114,5 +141,6 @@
   }
   .hero-desc { margin-left: auto; margin-right: auto; }
   .hero-actions { justify-content: center; }
+  .hero-docs { justify-content: center; }
   .hero-portrait-col { order: -1; }
 }

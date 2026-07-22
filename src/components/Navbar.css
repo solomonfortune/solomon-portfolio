@@ -68,6 +68,31 @@
   width: 100%;
 }
 
+.nav-divider {
+  width: 1px;
+  height: 16px;
+  background: var(--card-border);
+}
+
+.nav-doc-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 100px;
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  transition: border-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out);
+}
+
+.nav-doc-link:hover {
+  border-color: var(--card-border-hover);
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+
 .nav-actions {
   display: flex;
   align-items: center;

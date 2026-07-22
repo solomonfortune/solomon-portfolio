@@ -1,14 +1,21 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Menu, X, FileText, FileUser } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 import { profile } from '../utils/data';
+import { scrollToSection } from '../utils/scrollToSection';
 import './Navbar.css';
 
-const LINKS = [
-  { href: '#about', label: 'About' },
-  { href: '#work', label: 'Work' },
-  { href: '#connect', label: 'Blog & Contact' },
+const SCROLL_LINKS = [
+  { id: 'about', label: 'About' },
+  { id: 'work', label: 'Work' },
+  { id: 'connect', label: 'Blog & Contact' },
+];
+
+const DOC_LINKS = [
+  { to: '/cv', label: 'CV', Icon: FileText },
+  { to: '/resume', label: 'Resume', Icon: FileUser },
 ];
 
 export default function Navbar() {
@@ -27,14 +34,22 @@ export default function Navbar() {
   return (
     <header className={`nav ${scrolled ? 'nav-scrolled' : ''}`}>
       <div className="container nav-inner">
-        <a href="#top" className="nav-logo" onClick={handleNavClick}>
+        <a href="#top" className="nav-logo" onClick={(e) => { scrollToSection(e, 'top'); handleNavClick(); }}>
           <span className="nav-logo-mark">&gt;_</span>
           {profile.handle}
         </a>
 
         <nav className="nav-links" aria-label="Primary">
-          {LINKS.map((link) => (
-            <a key={link.href} href={link.href}>{link.label}</a>
+          {SCROLL_LINKS.map((link) => (
+            <a key={link.id} href={`#${link.id}`} onClick={(e) => scrollToSection(e, link.id)}>
+              {link.label}
+            </a>
+          ))}
+          <span className="nav-divider" aria-hidden="true" />
+          {DOC_LINKS.map((link) => (
+            <Link key={link.to} to={link.to} target="_blank" rel="noreferrer" className="nav-doc-link">
+              <link.Icon size={14} /> {link.label}
+            </Link>
           ))}
         </nav>
 
@@ -61,8 +76,19 @@ export default function Navbar() {
             transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
             aria-label="Mobile"
           >
-            {LINKS.map((link) => (
-              <a key={link.href} href={link.href} onClick={handleNavClick}>{link.label}</a>
+            {SCROLL_LINKS.map((link) => (
+                <a
+                  key={link.id}
+                  href={`#${link.id}`}
+                  onClick={(e) => { scrollToSection(e, link.id); handleNavClick(); }}
+                >
+                  {link.label}
+                </a>
+            ))}
+            {DOC_LINKS.map((link) => (
+              <Link key={link.to} to={link.to} target="_blank" rel="noreferrer" onClick={handleNavClick}>
+                {link.label}
+              </Link>
             ))}
           </motion.nav>
         )}

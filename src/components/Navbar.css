@@ -42,18 +42,18 @@
   gap: 36px;
 }
 
-.nav-links a {
+.nav-scroll-link {
   font-size: 0.92rem;
   color: var(--text-secondary);
   position: relative;
   transition: color var(--dur-fast) var(--ease-out);
 }
 
-.nav-links a:hover {
+.nav-scroll-link:hover {
   color: var(--text);
 }
 
-.nav-links a::after {
+.nav-scroll-link::after {
   content: '';
   position: absolute;
   left: 0;
@@ -64,7 +64,7 @@
   transition: width var(--dur-fast) var(--ease-out);
 }
 
-.nav-links a:hover::after {
+.nav-scroll-link:hover::after {
   width: 100%;
 }
 

@@ -97,18 +97,13 @@
 
 .skill-tag-icon {
   flex-shrink: 0;
-  color: var(--text-tertiary);
-  transition: color var(--dur-fast) var(--ease-out);
+  color: var(--brand, var(--accent));
 }
 
 .skill-tag:hover {
   color: var(--text);
   border-color: var(--card-border-hover);
   transform: translateY(-1px);
-}
-
-.skill-tag:hover .skill-tag-icon {
-  color: var(--brand, var(--accent));
 }
 
 @media (max-width: 900px) {

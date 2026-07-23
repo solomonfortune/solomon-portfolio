@@ -41,7 +41,7 @@ export default function Navbar() {
 
         <nav className="nav-links" aria-label="Primary">
           {SCROLL_LINKS.map((link) => (
-            <a key={link.id} href={`#${link.id}`} onClick={(e) => scrollToSection(e, link.id)}>
+            <a key={link.id} href={`#${link.id}`} className="nav-scroll-link" onClick={(e) => scrollToSection(e, link.id)}>
               {link.label}
             </a>
           ))}
@@ -77,13 +77,14 @@ export default function Navbar() {
             aria-label="Mobile"
           >
             {SCROLL_LINKS.map((link) => (
-                <a
-                  key={link.id}
-                  href={`#${link.id}`}
-                  onClick={(e) => { scrollToSection(e, link.id); handleNavClick(); }}
-                >
-                  {link.label}
-                </a>
+              <a
+                key={link.id}
+                href={`#${link.id}`}
+                className="nav-scroll-link"
+                onClick={(e) => { scrollToSection(e, link.id); handleNavClick(); }}
+              >
+                {link.label}
+              </a>
             ))}
             {DOC_LINKS.map((link) => (
               <Link key={link.to} to={link.to} target="_blank" rel="noreferrer" onClick={handleNavClick}>

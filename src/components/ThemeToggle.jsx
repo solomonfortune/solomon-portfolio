@@ -14,7 +14,7 @@ export default function ThemeToggle() {
       aria-pressed={!isDark}
     >
       <span className={`theme-toggle-icon ${isDark ? '' : 'is-light'}`}>
-        {isDark ? <Moon size={16} strokeWidth={2} /> : <Sun size={16} strokeWidth={2} />}
+        {isDark ? <Sun size={16} strokeWidth={2} /> : <Moon size={16} strokeWidth={2} />}
       </span>
     </button>
   );

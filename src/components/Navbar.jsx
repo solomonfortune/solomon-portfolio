@@ -31,6 +31,19 @@ export default function Navbar() {
 
   const handleNavClick = () => setOpen(false);
 
+  // Mobile menu links close the dropdown AND scroll at the same instant.
+  // On some mobile browsers, the closing panel's own layout change can
+  // interrupt the scrollIntoView animation before it finishes, so the tap
+  // appears to do nothing. Fix: close first, then scroll once the panel's
+  // exit animation (250ms) has actually finished.
+  const handleMobileScrollClick = (e, id) => {
+    e.preventDefault();
+    setOpen(false);
+    window.setTimeout(() => {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 320);
+  };
+
   return (
     <header className={`nav ${scrolled ? 'nav-scrolled' : ''}`}>
       <div className="container nav-inner">
@@ -81,7 +94,7 @@ export default function Navbar() {
                 key={link.id}
                 href={`#${link.id}`}
                 className="nav-scroll-link"
-                onClick={(e) => { scrollToSection(e, link.id); handleNavClick(); }}
+                onClick={(e) => handleMobileScrollClick(e, link.id)}
               >
                 {link.label}
               </a>

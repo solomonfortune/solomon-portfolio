@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="container footer-inner">
         <span>© {new Date().getFullYear()} {profile.name}</span>
-        <span className="footer-built">Built with React &amp; Vite</span>
+        <span className="footer-built">Built with Love &amp; Passion</span>
       </div>
     </footer>
   );
